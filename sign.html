@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SignIn</title>
+        <link rel="stylesheet" href="./sign.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- Sign In Form -->
+            <div class="form-container sign-in-container">
+                <form id="sign-in-form">
+                    <h1>Sign In</h1>
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+    
+            <!-- Sign Up Form -->
+            <div class="form-container sign-up-container">
+                <form id="sign-up-form">
+                    <h1>Sign Up</h1>
+                    <input type="text" placeholder="Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+    
+            <!-- Toggle Button -->
+            <div class="form-toggle">
+                <button id="toggle-sign-in">Sign In</button>
+                <button id="toggle-sign-up">Sign Up</button>
+            </div>
+        </div>
+
+        <script>
+            const signInButton = document.getElementById('toggle-sign-in');
+            const signUpButton = document.getElementById('toggle-sign-up');
+            const signInContainer = document.querySelector('.sign-in-container');
+            const signUpContainer = document.querySelector('.sign-up-container');
+    
+            signInButton.addEventListener('click', () => {
+                signInContainer.style.display = 'block';
+                signUpContainer.style.display = 'none';
+            });
+    
+            signUpButton.addEventListener('click', () => {
+                signInContainer.style.display = 'none';
+                signUpContainer.style.display = 'block';
+            });
+    
+            // Show sign-in form by default
+            signInContainer.style.display = 'block';
+            signUpContainer.style.display = 'none';
+        </script>
+
+    </body>
+    </html>
